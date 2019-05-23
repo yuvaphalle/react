@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Login Register</title>
+ <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+ <link rel="stylesheet" 
+ href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+ <style>
+  html{
+   padding:50px;
+  }
+ </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse">
+ <div class="container-fluid">
+  <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+
+
+  </div>
+ </div>
+</nav>
+
+ <div class="container">
+  <div class="col-sm-6 col-sm-offset-3">
+   <center> <h2>Register</h2></center>
+
+   <% if(message.length > 0) { %>
+    <div class="alert alert-danger"><%= message %></div> 
+   <% } %>
+
+   <form action="/signup" method="post">
+
+
+
+    <div class="form-group">
+     <label>Username</label>
+     <input type="text" class="form-control"  placeholder="Username " name="username" required pattern="[a-zA-Z]{2,}"/>
+    </div>
+    <div class="form-group">
+     <label>Password</label>
+     <input type="password" class="form-control"  placeholder="Password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+    </div>
+
+    <button type="submit" class="btn btn-succcess btn-lg">Register</button>
+   </form>
+
+   <hr>
+
+   <p>Already Have Account <a href="/login">Login</a></p>
+   <p>Go Back <a href="/">Home</a>.</p>
+  </div>
+ </div>
+</body>
+</html>
